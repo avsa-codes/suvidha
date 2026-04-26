@@ -16,7 +16,17 @@ export default function FinalScreen({ companyId, modelId, partId, onBack }: Fina
   const part = parts[companyId as keyof typeof parts]?.find(p => p.id === partId);
 
   const handleWhatsApp = () => {
-    const message = `नमस्ते! मुझे ${company?.name} ${model?.name} के लिए ${part?.name} की जानकारी चाहिए। कृपया विस्तृत विवरण और मूल्य साझा करें।`;
+    const message = `
+Namaste bhaiya,
+
+Mujhe part ka rate chahiye:
+
+Company: ${company?.name}
+Model: ${model?.name}
+Part: ${part?.name}
+
+Best rate batao.
+`;
     const encodedMessage = encodeURIComponent(message);
     // Using a generic WhatsApp number format - update this with the actual business number
     const whatsappUrl = `https://wa.me/919839837184?text=${encodedMessage}`;

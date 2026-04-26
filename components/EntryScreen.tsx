@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import InstallPrompt from '@/components/InstallPrompt';
 
 interface EntryScreenProps {
   onStart: (type: 'parts' | 'machine') => void;
@@ -84,6 +85,7 @@ export default function EntryScreen({ onStart }: EntryScreenProps) {
         </button>
 
       </div>
+      <InstallPrompt />
 
     </div>
   </div>
