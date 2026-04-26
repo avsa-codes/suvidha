@@ -67,7 +67,7 @@ export default function EntryScreen({ onStart }: EntryScreenProps) {
       </p>
 
       {/* BUTTONS */}
-      <div className="flex flex-col gap-4 mt-8 w-full" style={{ position: 'relative', top: '130px' }}>
+      <div className="flex flex-col gap-4 mt-8 w-full" style={{ position: 'relative', top: '110px' }}>
 
         <button
           onClick={() => onStart('parts')}
