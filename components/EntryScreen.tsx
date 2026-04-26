@@ -50,16 +50,16 @@ export default function EntryScreen({ onStart }: EntryScreenProps) {
 
       {/* FAST PROMISE */}
       <p className="text-yellow-300 text-sm mb-2 font-medium">
-        ⚡ 2 min me WhatsApp pe rate milega
+        ⚡ Ab 2 min me WhatsApp pe rate milega
       </p>
 
       {/* HOOK */}
       <h1 className="text-white text-4xl font-extrabold leading-tight" style={{ fontSize: '50px'}}>
-        Zyada paisa
+        Zyada paisa de rhe hain
       </h1>
 
       <h2 className="text-white text-3xl font-bold" style={{ fontSize: '45px'}}>
-        de rahe ho?
+        machine ke parts ka?
       </h2>
 
       {/* SUPPORT */}
@@ -74,14 +74,14 @@ export default function EntryScreen({ onStart }: EntryScreenProps) {
           onClick={() => onStart('parts')}
           className="w-full bg-yellow-400 text-black font-bold py-5 rounded-2xl text-lg shadow-xl"
         >
-          ⚙️ PART KA RATE CHECK KARO
+          ⚙️ PART KA RATE CHECK KARE
         </button>
 
         <button
           onClick={() => onStart('machine')}
           className="w-full border-2 border-yellow-400 text-yellow-400 font-semibold py-5 rounded-2xl text-lg"
         >
-          ₹ MACHINE KA RATE CHECK KARO
+          ₹ PURANI MACHINE KA RATE CHECK KARO
         </button>
 
       </div>
