@@ -46,7 +46,7 @@ export default function CompanyScreen({ onSelect, onBack }: CompanyScreenProps) 
                 <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition"></div>
               </div>
               <div className="p-4 bg-gray-800">
-                <h3 className="text-xl font-bold text-white mb-1">
+                <h3 className="text-xl font-bold text-white mb-1" style ={{fontSize : '34px'}}>
                   {company.name}
                 </h3>
                 <p className="text-yellow-400 text-sm font-semibold">

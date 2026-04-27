@@ -25,7 +25,8 @@ Company: ${company?.name}
 Model: ${model?.name}
 Part: ${part?.name}
 
-Best rate batao.
+Best rate bataiye. 
+Photo Bhi bhej raha hoon.
 `;
     const encodedMessage = encodeURIComponent(message);
     // Using a generic WhatsApp number format - update this with the actual business number
@@ -95,7 +96,7 @@ Best rate batao.
           Get Quote On Whatsapp
         </button>
         <p className="text-center text-gray-400 text-xs mt-3">
-          {/* व्हाट्सएप खोलेगा और आपका संदेश पूर्वनिर्धारित होगा */}
+           
         </p>
       </div>
     </div>

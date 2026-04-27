@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
+
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
@@ -10,6 +11,10 @@ export const metadata: Metadata = {
   title: 'SUVIDHA - स्वयं की खोज',
   description: 'अपने उपकरण के लिए सही पार्ट खोजें। व्हाट्सएप पर संपर्क करें।',
   generator: 'v0.app',
+
+  manifest: '/manifest.json',   // ✅ ADD THIS
+  themeColor: '#facc15',        // ✅ ADD THIS
+
   icons: {
     icon: [
       {
@@ -34,11 +39,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+
+
   return (
     <html lang="hi" className="bg-gray-900">
       <body className="font-sans antialiased bg-gray-900">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
+        
       </body>
     </html>
   )

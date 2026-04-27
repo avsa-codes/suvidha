@@ -6,6 +6,7 @@ import CompanyScreen from '@/components/CompanyScreen';
 import ModelScreen from '@/components/ModelScreen';
 import PartScreen from '@/components/PartScreen';
 import FinalScreen from '@/components/FinalScreen';
+import {useEffect } from 'react';
 
 type Screen = 'entry' | 'company' | 'model' | 'part' | 'final';
 
@@ -24,62 +25,68 @@ export default function Home() {
     selectedPart: null,
   });
 
-  const handleStart = () => {
-    setState(prev => ({
-      ...prev,
-      currentScreen: 'company',
-    }));
+
+  useEffect(() => {
+  const handlePopState = () => {
+    setState(prev => {
+      if (prev.currentScreen === 'final') {
+        return { ...prev, currentScreen: 'part' };
+      }
+      if (prev.currentScreen === 'part') {
+        return { ...prev, currentScreen: 'model' };
+      }
+      if (prev.currentScreen === 'model') {
+        return { ...prev, currentScreen: 'company' };
+      }
+      if (prev.currentScreen === 'company') {
+        return { ...prev, currentScreen: 'entry' };
+      }
+      return prev;
+    });
   };
 
-  const handleSelectCompany = (companyId: string) => {
-    setState(prev => ({
-      ...prev,
-      currentScreen: 'model',
-      selectedCompany: companyId,
-    }));
-  };
+  window.addEventListener('popstate', handlePopState);
+  return () => window.removeEventListener('popstate', handlePopState);
+}, []);
 
-  const handleSelectModel = (modelId: string) => {
-    setState(prev => ({
-      ...prev,
-      currentScreen: 'part',
-      selectedModel: modelId,
-    }));
-  };
+const handleStart = () => {
+  window.history.pushState({ screen: 'company' }, '');
+  setState(prev => ({
+    ...prev,
+    currentScreen: 'company',
+  }));
+};
 
-  const handleSelectPart = (partId: string) => {
-    setState(prev => ({
-      ...prev,
-      currentScreen: 'final',
-      selectedPart: partId,
-    }));
-  };
+const handleSelectCompany = (companyId: string) => {
+  window.history.pushState({ screen: 'model' }, '');
+  setState(prev => ({
+    ...prev,
+    currentScreen: 'model',
+    selectedCompany: companyId,
+  }));
+};
 
-  const handleBack = () => {
-    if (state.currentScreen === 'company') {
-      setState(prev => ({
-        ...prev,
-        currentScreen: 'entry',
-      }));
-    } else if (state.currentScreen === 'model') {
-      setState(prev => ({
-        ...prev,
-        currentScreen: 'company',
-        selectedModel: null,
-      }));
-    } else if (state.currentScreen === 'part') {
-      setState(prev => ({
-        ...prev,
-        currentScreen: 'model',
-        selectedPart: null,
-      }));
-    } else if (state.currentScreen === 'final') {
-      setState(prev => ({
-        ...prev,
-        currentScreen: 'part',
-      }));
-    }
-  };
+const handleSelectModel = (modelId: string) => {
+  window.history.pushState({ screen: 'part' }, '');
+  setState(prev => ({
+    ...prev,
+    currentScreen: 'part',
+    selectedModel: modelId,
+  }));
+};
+
+const handleSelectPart = (partId: string) => {
+  window.history.pushState({ screen: 'final' }, '');
+  setState(prev => ({
+    ...prev,
+    currentScreen: 'final',
+    selectedPart: partId,
+  }));
+};
+
+const handleBack = () => {
+  window.history.back();
+};
 
   return (
     <main className="w-full min-h-screen bg-gray-900">
