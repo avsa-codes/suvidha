@@ -95,6 +95,8 @@ Photo Bhi bhej raha hoon.
           </svg>
           Get Quote On Whatsapp
         </button>
+
+        
         <p className="text-center text-gray-400 text-xs mt-3">
            
         </p>
