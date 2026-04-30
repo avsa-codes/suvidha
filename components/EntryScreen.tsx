@@ -111,6 +111,10 @@ export default function EntryScreen({ onStart }: EntryScreenProps) {
       </div>
 
       {/* ===== WHATSAPP BUTTON ===== */}
+      {/* WhatsApp Hint Bubble */}
+<div className="fixed bottom-24 right-6 z-50 bg-white text-black text-xs px-3 py-2 rounded-lg shadow-md animate-bounce">
+  WhatsApp par chat karein 💬
+</div>
       <a
   href="https://wa.me/919839837184"
   target="_blank"
