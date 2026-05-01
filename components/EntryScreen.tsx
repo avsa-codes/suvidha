@@ -66,23 +66,30 @@ export default function EntryScreen({ onStart }: EntryScreenProps) {
           <div className="flex flex-col items-center text-center max-w-sm w-full relative -top-12">
 
             {/* FAST PROMISE */}
-            <p className="text-yellow-300 text-sm mb-2 font-medium">
-              ⚡ Ab 2 min me WhatsApp pe rate milega
+            <p className="text-yellow-300 text-sm mb-2 font-medium" >
+              
             </p>
 
             {/* HOOK */}
-            <h1 className="text-white font-extrabold leading-tight text-5xl">
-              Zyada paisa de rhe hain
+            <div >
+            <h1 className="text-white font-extrabold leading-tight text-5xl" style={{fontSize:'50px'}}>
+              मशीन के पार्ट्स
             </h1>
 
-            <h2 className="text-white font-bold leading-tight text-4xl">
-              machine ke parts ka?
+            <h2 className="text-white font-bold leading-tight text-4xl" style={{fontSize:'50px', width:'345px', position:'relative', top:'10px', left:'10px'}}>
+              महंगे मिल रहे हैं?
             </h2>
-
+</div>
             {/* SUPPORT */}
-            <p className="text-yellow-400 text-lg mt-3 font-semibold">
-              Part ka sahi rate yahan milega
+            <p className="text-yellow-400 text-lg mt-3 font-semibold" style={{fontWeight : '800',color: 'white', fontSize : '20px'}}>
+              ⚡2 मिनट में WhatsApp पर रेट पाएं
             </p>
+
+            <div className ="flex flex-wrap justify-center gap-3 mt-4 text-sm text-white/90">
+  <span>✔ Best rate</span>
+  <span>✔ Fast delivery</span>
+  <span>✔ 4+ साल का अनुभव</span>
+</div>
 
             {/* BUTTONS */}
             <div className="flex flex-col gap-4 mt-10 w-full relative top-16" style={{position : 'relative', top : '30px'}}>
@@ -90,15 +97,17 @@ export default function EntryScreen({ onStart }: EntryScreenProps) {
               <button
                 onClick={() => onStart('parts')}
                 className="w-full bg-yellow-400 text-black font-bold py-5 rounded-2xl text-lg shadow-xl"
+                style={{fontSize:'24px'}}
               >
-                ⚙️ PART KA RATE CHECK KARE
+                {/* ⚙️ PART KA RATE CHECK KARE */}WhatsApp पर तुरंत रेट पूछें
               </button>
 
               <button
                 onClick={() => onStart('machine')}
                 className="w-full border-2 border-yellow-400 text-yellow-400 font-semibold py-5 rounded-2xl text-lg"
+                style={{fontSize:'24px'}}
               >
-                ₹ PURANI MACHINE KA RATE CHECK KARO
+                ₹ पुरानी मशीन का रेट चेक करें
               </button>
 
             </div>
