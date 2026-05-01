@@ -71,7 +71,7 @@ export default function EntryScreen({ onStart }: EntryScreenProps) {
             </p>
 
             {/* HOOK */}
-            <div >
+            <div style={{position:'relative', top:'-20px'}}>
             <h1 className="text-white font-extrabold leading-tight text-5xl" style={{fontSize:'50px'}}>
               मशीन के पार्ट्स
             </h1>
