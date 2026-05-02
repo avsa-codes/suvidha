@@ -125,7 +125,8 @@ export default function EntryScreen({ onStart }: EntryScreenProps) {
 />
 
 <div className="text-xl font-extrabold leading-tight">
-  पार्ट का <br /> रेट
+  स्पेयर 
+ <br /> पार्ट्स
 </div>
     </button>
 
