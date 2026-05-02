@@ -28,7 +28,7 @@ export default function EntryScreen({ onStart }: EntryScreenProps) {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col h-full px-6">
+      <div className="relative z-10 flex flex-col h-full px-6 pb-28">
 
         {/* ===== TOP LOGO ===== */}
         <div className="flex flex-col items-center mt-6">
@@ -40,26 +40,37 @@ export default function EntryScreen({ onStart }: EntryScreenProps) {
             height={100}
             className="object-contain rounded-xl border border-yellow-400"
             priority
+            style={{position:'relative', top:'-16px'}}
           />
 
           {/* ===== CONTACT INFO ===== */}
-          <div className="mt-2 flex flex-col items-center text-xs text-gray-300">
+          <div className="mt-2 flex items-center justify-center gap-4 text-white font-medium text-sm" style={{position:'relative', top:'-18px', fontSize:'14px'}}>
 
-            <div className="flex gap-3 text-white font-medium" style ={{fontSize : '16px'}}>
-              <a href="tel:9140468817" className="hover:text-yellow-400 transition">
-                 9140468817
-              </a>
-              <span className="text-gray-500">|</span>
-              <a href="tel:9839837184" className="hover:text-yellow-400 transition">
-                 9839837184
-              </a>
-            </div>
+  {/* 📞 Phone 1 */}
+  <a href="tel:9140468817" className="flex items-center gap-1 hover:text-yellow-400 transition">
+  
+    9140468817
+  </a>
 
-            <div className="text-gray-400 mt-1" style ={{fontSize : '20px', color : 'white'}}>
-               Prayagraj
-            </div>
+  {/* Divider */}
+  <span className="text-gray-500">|</span>
 
-          </div>
+  {/* 📞 Phone 2 */}
+  <a href="tel:9839837184" className="flex items-center gap-1 hover:text-yellow-400 transition">
+    
+    9839837184
+  </a>
+
+  {/* Divider */}
+  <span className="text-gray-500">|</span>
+
+  {/* 📍 Location */}
+  <div className="flex items-center gap-1 hover:text-yellow-400 transition">
+    
+    PRAYAGRAJ
+  </div>
+
+</div>
         </div>
 
         {/* ===== VALUE STRIPS ===== */}
@@ -82,13 +93,13 @@ export default function EntryScreen({ onStart }: EntryScreenProps) {
 </div>
 
         {/* ===== CENTER CONTENT ===== */}
-        <div className="flex flex-1 flex-col justify-between py-6">
+        <div className="flex flex-1 flex-col justify-between py-6 pb-32">
 
   {/* ===== TOP SPACE (keeps balance) ===== */}
  
 
   {/* ===== MAIN CTA ===== */}
-<div className="text-center">
+<div className="text-center" style={{position:'relative', top:'-34px'}}>
   <h2 className="text-white text-5xl font-extrabold leading-tight drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)]">
     आपको <br />
     क्या चाहिए?
@@ -99,7 +110,7 @@ export default function EntryScreen({ onStart }: EntryScreenProps) {
 </div>
 
   {/* ===== BIG BUTTON GRID ===== */}
-  <div className="grid grid-cols-2 gap-5 w-full">
+  <div className="grid grid-cols-2 gap-5 w-full" style={{position:'relative', top:'-50px'}}>
 
     {/* 🔧 PART */}
     <button
@@ -169,13 +180,13 @@ export default function EntryScreen({ onStart }: EntryScreenProps) {
   </div>
 
   {/* ===== BOTTOM TRUST LINE ===== */}
-<div className="mt-6 flex items-center justify-center">
-  <div className="flex items-center gap-3 bg-black/70 border border-yellow-400/50 rounded-full px-4 py-2 backdrop-blur-sm">
+<div className="mt-6 mb-4 flex items-center justify-center">
+  <div className="flex items-center gap-3 bg-black/70 border border-yellow-400/50 rounded-full px-4 py-2 backdrop-blur-sm" style={{position:'relative', top:'-50px'}}>
 
-    <span className="text-yellow-400 text-lg">⚡</span>
+    {/* <span className="text-yellow-400 text-lg">⚡</span> */}
 
     <p className="text-sm text-white">
-      2 मिनट में <span className="text-yellow-400 font-semibold">WhatsApp</span> पर जवाब मिलेगा
+    ⚡2 मिनट में <span className="text-yellow-400 font-semibold">WhatsApp</span> पर जवाब मिलेगा
     </p>
 
   </div>
@@ -191,7 +202,8 @@ export default function EntryScreen({ onStart }: EntryScreenProps) {
       <a
   href="https://wa.me/919839837184"
   target="_blank"
-  className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 w-14 h-14 rounded-full shadow-xl flex items-center justify-center"
+  className="fixed bottom-10 right-6 z-50 bg-green-500 hover:bg-green-600 w-14 h-14 rounded-full shadow-xl flex items-center justify-center"
+  style={{position:'relative', left:'336px', top:'-78px', width:'50px', height:'50px'}}
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -205,7 +217,8 @@ export default function EntryScreen({ onStart }: EntryScreenProps) {
       {/* ===== CALL BUTTON ===== */}
       <a
   href="tel:9140468817"
-  className="fixed bottom-6 left-6 z-50 bg-yellow-400 hover:bg-yellow-500 w-14 h-14 rounded-full shadow-xl flex items-center justify-center"
+  className="fixed bottom-10  left-6 z-50 bg-yellow-400 hover:bg-yellow-500 w-14 h-14 rounded-full shadow-xl flex items-center justify-center"
+  style={{position:'relative', left:'4px', top:'-128px', width:'50px', height:'50px'}}
 >
   <svg
     xmlns="http://www.w3.org/2000/svg"
