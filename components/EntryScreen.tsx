@@ -3,8 +3,10 @@
 import Image from 'next/image';
 import InstallPrompt from '@/components/InstallPrompt';
 
+import type { FlowType } from '@/app/page';
+
 interface EntryScreenProps {
-  onStart: (type: 'parts' | 'machine') => void;
+  onStart: (type: FlowType) => void;
 }
 
 export default function EntryScreen({ onStart }: EntryScreenProps) {
@@ -60,70 +62,132 @@ export default function EntryScreen({ onStart }: EntryScreenProps) {
           </div>
         </div>
 
+        {/* ===== VALUE STRIPS ===== */}
+<div className="space-y-3 mb-6">
+
+  <div className="flex items-center gap-3 border border-yellow-400/60 rounded-lg px-3 py-2 bg-black/40 backdrop-blur-sm">
+    <span className="text-yellow-400 text-lg">✔</span>
+    <p className="text-sm text-white">
+      आपकी मशीन और पार्ट्स की पूरी सुविधा
+    </p>
+  </div>
+
+  <div className="flex items-center gap-3 border border-yellow-400/60 rounded-lg px-3 py-2 bg-black/40 backdrop-blur-sm">
+    <span className="text-yellow-400 text-lg">⭐</span>
+    <p className="text-sm text-yellow-400 font-semibold">
+      भारत का सबसे आसान प्लेटफॉर्म मशीन और पार्ट्स के लिए
+    </p>
+  </div>
+
+</div>
+
         {/* ===== CENTER CONTENT ===== */}
-        <div className="flex flex-1 items-center justify-center">
+        <div className="flex flex-1 flex-col justify-between py-6">
 
-          <div className="flex flex-col items-center text-center max-w-sm w-full relative -top-12">
+  {/* ===== TOP SPACE (keeps balance) ===== */}
+ 
 
-            {/* FAST PROMISE */}
-            <p className="text-yellow-300 text-sm mb-2 font-medium" >
-              
-            </p>
+  {/* ===== MAIN CTA ===== */}
+<div className="text-center">
+  <h2 className="text-white text-5xl font-extrabold leading-tight drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)]">
+    आपको <br />
+    क्या चाहिए?
+  </h2>
 
-            {/* HOOK */}
-            <div style={{position:'relative', top:'-20px'}}>
-            <h1 className="text-white font-extrabold leading-tight text-5xl" style={{fontSize:'50px'}}>
-              मशीन के पार्ट्स
-            </h1>
-
-            <h2 className="text-white font-bold leading-tight text-4xl" style={{fontSize:'50px', width:'345px', position:'relative', top:'10px', left:'10px'}}>
-              महंगे मिल रहे हैं?
-            </h2>
-</div>
-            {/* SUPPORT */}
-            <p className="text-yellow-400 text-lg mt-3 font-semibold" style={{fontWeight : '800',color: 'white', fontSize : '20px'}}>
-              ⚡2 मिनट में WhatsApp पर रेट पाएं
-            </p>
-
-            <div className ="flex flex-wrap justify-center gap-3 mt-4 text-sm text-white/90">
-  <span>✔ Best rate</span>
-  <span>✔ Fast delivery</span>
-  <span>✔ 4+ साल का अनुभव</span>
+  {/* Glow line */}
+  <div className="h-[2px] w-32 mx-auto bg-gradient-to-r from-transparent via-yellow-400 to-transparent mt-2 mb-6" />
 </div>
 
-            {/* BUTTONS */}
-            <div className="flex flex-col gap-4 mt-10 w-full relative top-16" style={{position : 'relative', top : '30px'}}>
+  {/* ===== BIG BUTTON GRID ===== */}
+  <div className="grid grid-cols-2 gap-5 w-full">
 
-              <button
-                onClick={() => onStart('parts')}
-                className="w-full bg-yellow-400 text-black font-bold py-5 rounded-2xl text-lg shadow-xl"
-                style={{fontSize:'24px'}}
-              >
-                {/* ⚙️ PART KA RATE CHECK KARE */}WhatsApp पर तुरंत रेट पूछें
-              </button>
+    {/* 🔧 PART */}
+    <button
+    
+      onClick={() => onStart('part')}
+      className="bg-gradient-to-b from-yellow-300 to-yellow-500 text-black rounded-2xl p-5 flex flex-col items-center justify-center h-40 shadow-xl shadow-yellow-500/30 active:scale-95 transition border border-yellow-200"
+    >
+      <img
+  src="/icons/gear.png"
+  alt="Gear"
+  className="w-20 h-20 object-contain"
+/>
 
-              <button
-                onClick={() => onStart('machine')}
-                className="w-full border-2 border-yellow-400 text-yellow-400 font-semibold py-5 rounded-2xl text-lg"
-                style={{fontSize:'24px'}}
-              >
-                ₹ पुरानी मशीन का रेट चेक करें
-              </button>
+<div className="text-xl font-extrabold leading-tight">
+  पार्ट का <br /> रेट
+</div>
+    </button>
 
-            </div>
+    {/* 🚜 MACHINE */}
+    <button
+  onClick={() => onStart('machine-intent')}
+  className="bg-gradient-to-b from-yellow-300 to-yellow-500 text-black rounded-2xl p-5 flex flex-col items-center justify-center h-40 shadow-xl shadow-yellow-500/30 active:scale-95 transition border border-yellow-200"
+>
+  <img
+  src="/icons/excavator.png"
+  alt="Gear"
+  className="w-20 h-20 object-contain"
+/>
 
-            <InstallPrompt />
+  <div className="text-2xl font-extrabold leading-tight">
+    मशीन <br /> खरीदें/बेचें
+  </div>
+</button>
 
-          </div>
-        </div>
+    {/* 🛠️ MECHANIC */}
+    <button
+  onClick={() => onStart('mechanic')}
+  className="bg-black/60  rounded-2xl p-5 flex flex-col items-center justify-center h-40 backdrop-blur-sm active:scale-95 transition border border-yellow-200 shadow-[0_0_20px_rgba(255,215,0,0.3)]"
+>
+  <img
+  src="/icons/mechanic.png"
+  alt="Gear"
+  className="w-20 h-20 object-contain"
+/>
+
+  <div className="text-2xl font-bold text-white leading-tight">
+    मैकेनिक <br /> चाहिए
+  </div>
+</button>
+
+    {/* ♻️ USED PART */}
+    <button
+  onClick={() => onStart('used-part')}
+  className="bg-black/60  rounded-2xl p-5 flex flex-col items-center justify-center h-40 backdrop-blur-sm active:scale-95 transition border border-yellow-200 shadow-[0_0_20px_rgba(255,215,0,0.3)]"
+>
+ <img
+  src="/icons/recycle.png"
+  alt="Gear"
+  className="w-20 h-20 object-contain"
+/>
+
+  <div className="text-2xl font-bold text-white leading-tight">
+    पुराने <br /> पार्ट्स
+  </div>
+</button>
+
+  </div>
+
+  {/* ===== BOTTOM TRUST LINE ===== */}
+<div className="mt-6 flex items-center justify-center">
+  <div className="flex items-center gap-3 bg-black/70 border border-yellow-400/50 rounded-full px-4 py-2 backdrop-blur-sm">
+
+    <span className="text-yellow-400 text-lg">⚡</span>
+
+    <p className="text-sm text-white">
+      2 मिनट में <span className="text-yellow-400 font-semibold">WhatsApp</span> पर जवाब मिलेगा
+    </p>
+
+  </div>
+</div>
+
+</div>
 
       </div>
 
       {/* ===== WHATSAPP BUTTON ===== */}
       {/* WhatsApp Hint Bubble */}
-<div className="fixed bottom-24 right-6 z-50 bg-white text-black text-xs px-3 py-2 rounded-lg shadow-md animate-bounce">
-  WhatsApp par chat karein 💬
-</div>
+
       <a
   href="https://wa.me/919839837184"
   target="_blank"
