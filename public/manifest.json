@@ -1,11 +1,11 @@
 {
   "name": "Suvidha Earthmovers",
   "short_name": "Suvidha",
-  "description": "Check part prices instantly on WhatsApp",
+  "description": "Machine parts, buying, selling & services",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
-  "theme_color": "#facc15",
+  "theme_color": "#000000",
   "icons": [
     {
       "src": "/icons/icon-192.png",

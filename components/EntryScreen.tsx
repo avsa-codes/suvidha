@@ -230,6 +230,8 @@ export default function EntryScreen({ onStart }: EntryScreenProps) {
   </svg>
 </a>
 
+<InstallPrompt />
+
     </div>
   );
 }

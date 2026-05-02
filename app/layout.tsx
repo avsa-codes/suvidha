@@ -3,36 +3,8 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: 'SUVIDHA - स्वयं की खोज',
-  description: 'अपने उपकरण के लिए सही पार्ट खोजें। व्हाट्सएप पर संपर्क करें।',
-  generator: 'v0.app',
-
-  manifest: '/manifest.json',   // ✅ ADD THIS
-  themeColor: '#facc15',        // ✅ ADD THIS
-
-  icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
-  },
-}
 
 export default function RootLayout({
   children,
@@ -40,14 +12,25 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
 
-
   return (
     <html lang="hi" className="bg-gray-900">
+
+      {/* 🔥 ADD THIS HEAD */}
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#000000" />
+
+        {/* iOS support (important) */}
+        <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+      </head>
+
       <body className="font-sans antialiased bg-gray-900">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
-        
       </body>
+
     </html>
   )
 }
